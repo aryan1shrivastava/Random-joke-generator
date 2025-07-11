@@ -5,7 +5,7 @@ const loadingEl = document.getElementById("loading");
 async function getJoke() {
   try {
     loadingEl.classList.remove("hidden");
-    jokeElement.textContent = ""; // Clear previous joke
+    jokeElement.textContent = "";
 
     const { data } = await axios.get(
       "https://api.freeapi.app/api/v1/public/randomjokes/joke/random"
@@ -18,7 +18,7 @@ async function getJoke() {
     }
   } catch (error) {
     console.error(error);
-    jokeElement.textContent = "Failed to fetch a joke. Please try again later.";
+    jokeElement.textContent = "Failed to fetch a joke. Please try again.";
   } finally {
     loadingEl.classList.add("hidden");
   }
